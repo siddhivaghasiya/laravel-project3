@@ -48,5 +48,11 @@
 <script src="{{asset('adminlt/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('adminlt/dist/js/pages/dashboard.js')}}"></script>
+
+ <link rel="stylesheet" href="{{asset('adminlt/bootstrap.min.css')}}">
+  <script src="{{asset('adminlt/jquery.min.js')}}jquery.min.js"></script>
+  <script src="{{asset('adminlt/bootstrap.min.js')}}"></script>
+  <script src="{{asset('adminlt/jquery.validate.min.js')}}"></script>     
+  <script src="{{asset('adminlt/additional-methods.min.js')}}"></script>
 </body>
 </html>

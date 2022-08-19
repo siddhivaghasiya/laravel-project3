@@ -46,7 +46,28 @@
               </p>
             </a>
           </li>
-          
+
+          <li class="nav-item">
+            <a href="{{route('blog.listing')}}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+               Blog
+              </p>
+            </a>
+
+              <ul>
+               <li >
+                   <a href="{{route('categories.listing')}}">Categories</a>
+                </li>
+                 <li >
+                   <a href="{{route('tag.listing')}}">Tags</a>
+                </li> 
+              </ul>
+           
+          </li>
+
+
+        
           
           
         </ul>

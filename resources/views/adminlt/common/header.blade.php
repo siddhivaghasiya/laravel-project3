@@ -25,6 +25,11 @@
   <link rel="stylesheet" href="{{asset('adminlt/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('adminlt/plugins/summernote/summernote-bs4.min.css')}}">
+  <style>
+  .error {
+    color: red;
+}
+  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
