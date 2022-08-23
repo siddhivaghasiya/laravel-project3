@@ -35,8 +35,8 @@
   
 
 <div class="container">
-  <h2>Blog Form</h2>
-  <form action="{{route('blog.save-add')}}" method="POST"  enctype="multipart/form-data" id="blog">
+  <h2>Department Form</h2>
+  <form action="{{route('department.save-create')}}" method="POST"  enctype="multipart/form-data" id="department">
     
     @csrf
 
@@ -57,40 +57,14 @@
     </div>
 
     <div class="form-group">
-      <label >popular post:</label>
-      <input type="checkbox" id="p_post" name="p_post" value="1" >
+      <label >Small Description:</label>
+      <input type="text" class="form-control" id="smalldescription" placeholder="Enter small description" name="smalldescription">
     </div>
 
-   <div class="form-group">
-    <label >Categories:</label>
-    <select class="form-control"  name="categories" id="categories">
-      <option value="">select Categories</option>
-
-      @if(isset($getallcategories) && !$getallcategories->isEmpty())
-
-        @foreach($getallcategories as $key=>$v)
-           <option value="{{$v->id}}">{{$v->categories}}</option>
-        @endforeach
-
-      @endif
-    </select>
-   </div>
-
-   <div class="form-group">
-    <label >Tags:</label>
-    <select class="form-control"  name="tags" id="tags">
-      <option value="">select Tags</option>
-       
-        @if(isset($getalltags) && !$getalltags->isEmpty())
-
-        @foreach($getalltags as $key=>$v)
-           <option value="{{$v->id}}">{{$v->tags}}</option>
-        @endforeach
-
-      @endif   
-
-    </select>
-   </div>
+    <div class="form-group">
+      <label >Number:</label>
+      <input type="text" class="form-control" id="number" placeholder="Enter number" name="number">
+    </div>
 
    <div class="form-group">
     <label >Status:</label>
@@ -102,28 +76,28 @@
    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-      <a href="{{route('categories.listing')}}" class="btn btn-danger">Cancle</a>
+      <a href="{{route('department.listing')}}" class="btn btn-danger">Cancle</a>
 </form>
 </div>
 
 <script>
 
   $(document).ready(function() {
-    $("#blog").validate({
+    $("#department").validate({
       rules: { 
         image: {required:true},
         title: {required:true},
         description: {required:true},
-        categories: {required:true},
-        tags: {required:true},
+        smalldescription: {required:true},
+        number: {required:true},
         status:  {required: true},
       },
       messages: {
         image: { required: "this field is required."},
         title: { required: "this field is required."},
         description: { required: "this field is required."},
-        categories: { required: "this field is required."},
-        tags: { required: "this field is required."},
+        smalldescription: { required: "this field is required."},
+        number: { required: "this field is required."},
         status: { required: "this field is required.."},
      }
     });

@@ -35,64 +35,48 @@ a {
 </head>
 <body>
 
-<h2>Blogs listing</h2>
+<h2>Doctors listing</h2>
 
 <div style="margin-top:20px; margin-bottom:40px;">
-  <a href="{{route('blog.add')}}"><h4>Add Blogs Record</h4></a>
+  <a href="{{route('doctors.add')}}"><h4>Add Doctors Record</h4></a>
 </div>
 
 <table class="table table-dark table-bordered">
 
   <tr class="x">
     <th>Id</th>
-    <th>image</th>
-    <th>title</th>
-    <th>description</th>
-    <th>popular post</th>
-    <th>categories</th>
-    <th>tags</th>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Description</th>
+    <th>Department</th>
     <th>status</th>
     <th>Action</th>
   </tr>
 
-  @if(isset($getallblog) && !$getallblog->isEmpty())
+  @if(isset($getdoctors) && !$getdoctors->isEmpty())
 
-    @foreach($getallblog as $key=>$v)
+    @foreach($getdoctors as $key=>$v)
 
-     <?php 
+     <?php
+     
+      $getdepartment = \App\Models\Department::where('id',$v->department)->first();
 
-        $mycategories = \App\Models\Categories::where('id',$v->categories)->first();
-        $mytags = \App\Models\Tags::where('id',$v->tags)->first();
-
-       ?>
-
+     ?>
 
     <tr>
       <td>{{$v->id}}</td> <!-- database name -->
       <td>{{$v->image}}</td> <!-- database name -->
-      <td>{{$v->title}}</td> <!-- database name -->
+      <td>{{$v->name}}</td> <!-- database name -->
+      <td>{{$v->position}}</td> <!-- database name -->
       <td>{{$v->description}}</td> <!-- database name -->
       <td>
-        @if($v->popular_post == 1)
-           Yes
+        @if($getdepartment !=null)
+          {{$getdepartment->title}}
         @else
-           No
+           -
         @endif
-      </td>
-      <td>
-      @if($mycategories !=null)
-        {{$mycategories->categories}}
-       @else
-        -
-       @endif
-      </td>
-      <td>
-       @if($mytags !=null)
-        {{$mytags->tags}}
-       @else
-        -
-       @endif
-      </td>
+      </td> <!-- database name -->
       <td>
       	@if($v->status == 1)
       	  active
@@ -101,8 +85,8 @@ a {
         @endif
     </td>
       <td>
-        <a href="{{route('blog.edit',$v->id)}}">Edit</a>   
-        <a href="{{route('blog.delete',$v->id)}}">Delete</a>
+        <a href="{{route('doctors.edit',$v->id)}}">Edit</a>   
+        <a href="{{route('department.delete',$v->id)}}">Delete</a>
       </td>
     </tr>
 

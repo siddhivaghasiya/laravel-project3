@@ -35,10 +35,10 @@ a {
 </head>
 <body>
 
-<h2>Blogs listing</h2>
+<h2>Department listing</h2>
 
 <div style="margin-top:20px; margin-bottom:40px;">
-  <a href="{{route('blog.add')}}"><h4>Add Blogs Record</h4></a>
+  <a href="{{route('department.create')}}"><h4>Add Department Record</h4></a>
 </div>
 
 <table class="table table-dark table-bordered">
@@ -48,51 +48,25 @@ a {
     <th>image</th>
     <th>title</th>
     <th>description</th>
-    <th>popular post</th>
-    <th>categories</th>
-    <th>tags</th>
+    <th>small description</th>
+    <th>number</th>
     <th>status</th>
     <th>Action</th>
   </tr>
 
-  @if(isset($getallblog) && !$getallblog->isEmpty())
+  @if(isset($getalldepartment) && !$getalldepartment->isEmpty())
 
-    @foreach($getallblog as $key=>$v)
+    @foreach($getalldepartment as $key=>$v)
 
-     <?php 
-
-        $mycategories = \App\Models\Categories::where('id',$v->categories)->first();
-        $mytags = \App\Models\Tags::where('id',$v->tags)->first();
-
-       ?>
-
+     
 
     <tr>
       <td>{{$v->id}}</td> <!-- database name -->
       <td>{{$v->image}}</td> <!-- database name -->
       <td>{{$v->title}}</td> <!-- database name -->
       <td>{{$v->description}}</td> <!-- database name -->
-      <td>
-        @if($v->popular_post == 1)
-           Yes
-        @else
-           No
-        @endif
-      </td>
-      <td>
-      @if($mycategories !=null)
-        {{$mycategories->categories}}
-       @else
-        -
-       @endif
-      </td>
-      <td>
-       @if($mytags !=null)
-        {{$mytags->tags}}
-       @else
-        -
-       @endif
-      </td>
+      <td>{{$v->small_description}}</td> <!-- database name -->
+      <td>{{$v->number}}</td> <!-- database name -->
       <td>
       	@if($v->status == 1)
       	  active
@@ -101,8 +75,8 @@ a {
         @endif
     </td>
       <td>
-        <a href="{{route('blog.edit',$v->id)}}">Edit</a>   
-        <a href="{{route('blog.delete',$v->id)}}">Delete</a>
+        <a href="{{route('department.edit',$v->id)}}">Edit</a>   
+        <a href="{{route('department.delete',$v->id)}}">Delete</a>
       </td>
     </tr>
 

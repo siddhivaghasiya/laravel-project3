@@ -66,6 +66,32 @@
            
           </li>
 
+          <li class="nav-item">
+            <a href="{{route('department.listing')}}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                 Department
+              </p>
+            </a>
+          </li>
+
+           <li class="nav-item">
+            <a href="{{route('doctors.listing')}}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                 Doctors
+              </p>
+            </a>
+          </li>
+
+           <li class="nav-item">
+            <a href="{{route('department.listing')}}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                 Service
+              </p>
+            </a>
+          </li>
 
         
           
