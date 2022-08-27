@@ -83,6 +83,7 @@ Route::get('adminlte/{id}/department-edit','\App\Http\Controllers\Departmentcont
 Route::post('adminlte/{id}/department-edit','\App\Http\Controllers\Departmentcontroller@update')->name('department.save-edit');
 
 Route::get('adminlte/{id}/department-delete','\App\Http\Controllers\Departmentcontroller@delete')->name('department.delete');
+
 // Doctors
 
 Route::get('adminlte/doctors','\App\Http\Controllers\Doctorscontroller@listing')->name('doctors.listing');
@@ -93,5 +94,23 @@ Route::post('adminlte/doctors-savecreate','\App\Http\Controllers\Doctorscontroll
 
 Route::get('adminlte/{id}/doctors-edit','\App\Http\Controllers\Doctorscontroller@edit')->name('doctors.edit');
 
-Route::post('adminlte/{id}/doctorssaveedit','\App\Http\Controllers\Doctorscontroller@update')->name('doctors.save-edit');
+Route::post('adminlte/{id}/doctors-saveedit','\App\Http\Controllers\Doctorscontroller@update')->name('doctors.save-edit');
+
+Route::get('adminlte/{id}/doctors-delete','\App\Http\Controllers\Doctorscontroller@delete')->name('doctors.delete');
+
+// Service
+
+Route::get('adminlte/service','\App\Http\Controllers\Servicecontroller@listing')->name('service.listing');
+
+Route::get('adminlte/service-add','\App\Http\Controllers\Servicecontroller@create')->name('service.add');
+
+Route::post('adminlte/service-save-add','\App\Http\Controllers\Servicecontroller@savecreate')->name('service.save-add');
+
+Route::get('adminlte/{id}/service-edit','\App\Http\Controllers\Servicecontroller@edit')->name('service.edit');
+
+Route::post('adminlte/{id}/service-save-edit','\App\Http\Controllers\Servicecontroller@update')->name('service.save-edit');
+
+
+
+
 

@@ -85,7 +85,7 @@
           </li>
 
            <li class="nav-item">
-            <a href="{{route('department.listing')}}" class="nav-link">
+            <a href="{{route('service.listing')}}" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                  Service

@@ -87,4 +87,13 @@ class Doctorscontroller extends Controller
 
         return redirect()->route('doctors.listing');
     }
+
+    public function delete($parameterid){
+         
+
+        $obj = \App\Models\Doctors::where('id',$parameterid)->first();
+        $obj->delete();
+
+        return redirect()->route('doctors.listing');
+    }
 }

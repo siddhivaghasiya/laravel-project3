@@ -35,8 +35,8 @@
   
 
 <div class="container">
-  <h2>Doctors Form</h2>
-  <form action="{{route('doctors.save-add')}}" method="POST"  enctype="multipart/form-data" id="doctors">
+  <h2>Service Form</h2>
+  <form action="{{route('service.save-add')}}" method="POST"  enctype="multipart/form-data" id="service">
     
     @csrf
 
@@ -46,34 +46,13 @@
     </div>
 
     <div class="form-group">
-      <label >Name:</label>
+      <label >Service Name:</label>
       <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
-    </div>
-
-
-    <div class="form-group">
-      <label >Position:</label>
-      <input type="text" class="form-control" id="position" placeholder="Enter position" name="position">
     </div>
 
     <div class="form-group">
       <label >Description:</label>
       <input type="text" class="form-control" id="description" placeholder="Enter description" name="description">
-    </div>
-
-    <div class="form-group">
-      <label >Department:</label>
-      <select class="form-control"  name="department" id="department">
-        <option value="">select department</option>
-
-        @if(isset($getdepartment) && !$getdepartment->isEmpty())
-           @foreach($getdepartment as $key=>$v)
-
-        <option value="{{$v->id}}">{{$v->title}}</option>
-          
-           @endforeach
-        @endif
-    </select>
     </div>
 
      <div class="form-group">
@@ -93,21 +72,17 @@
 <script>
 
   $(document).ready(function() {
-    $("#doctors").validate({
+    $("#service").validate({
       rules: { 
         image: {required:true},
         name: {required:true},
-        position: {required:true},
         description: {required:true},
-        department: {required:true},
         status:  {required: true},
       },
       messages: {
         image: { required: "this field is required."},
         name: { required: "this field is required."},
-        position: { required: "this field is required."},
         description: { required: "this field is required."},
-        department: { required: "this field is required."},
         status: { required: "this field is required.."},
      }
     });

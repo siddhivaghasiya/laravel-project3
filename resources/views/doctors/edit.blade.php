@@ -96,18 +96,18 @@
     $("#doctors").validate({
       rules: { 
         image: {required:true},
-        title: {required:true},
+        name: {required:true},
+        position: {required:true},
         description: {required:true},
-        smalldescription: {required:true},
-        number: {required:true},
+        department: {required:true},
         status:  {required: true},
       },
       messages: {
         image: { required: "this field is required."},
-        title: { required: "this field is required."},
+        name: { required: "this field is required."},
+        position: { required: "this field is required."},
         description: { required: "this field is required."},
-        smalldescription: { required: "this field is required."},
-        number: { required: "this field is required."},
+        department: { required: "this field is required."},
         status: { required: "this field is required.."},
      }
     });

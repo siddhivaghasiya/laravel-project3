@@ -35,10 +35,10 @@ a {
 </head>
 <body>
 
-<h2>Doctors listing</h2>
+<h2>Service listing</h2>
 
 <div style="margin-top:20px; margin-bottom:40px;">
-  <a href="{{route('doctors.add')}}"><h4>Add Doctors Record</h4></a>
+  <a href="{{route('service.add')}}"><h4>Add Service Record</h4></a>
 </div>
 
 <table class="table table-dark table-bordered">
@@ -46,37 +46,21 @@ a {
   <tr class="x">
     <th>Id</th>
     <th>Image</th>
-    <th>Name</th>
-    <th>Position</th>
+    <th>Service Name</th>
     <th>Description</th>
-    <th>Department</th>
     <th>status</th>
     <th>Action</th>
   </tr>
 
-  @if(isset($getdoctors) && !$getdoctors->isEmpty())
+  @if(isset($getallservice) && !$getallservice->isEmpty())
 
-    @foreach($getdoctors as $key=>$v)
+    @foreach($getallservice as $key=>$v)
 
-     <?php
-     
-      $getdepartment = \App\Models\Department::where('id',$v->department)->first();
-
-     ?>
-
-    <tr>
+   <tr>
       <td>{{$v->id}}</td> <!-- database name -->
       <td>{{$v->image}}</td> <!-- database name -->
-      <td>{{$v->name}}</td> <!-- database name -->
-      <td>{{$v->position}}</td> <!-- database name -->
+      <td>{{$v->service_name}}</td> <!-- database name -->
       <td>{{$v->description}}</td> <!-- database name -->
-      <td>
-        @if($getdepartment !=null)
-          {{$getdepartment->title}}
-        @else
-           -
-        @endif
-      </td> <!-- database name -->
       <td>
       	@if($v->status == 1)
       	  active
@@ -85,7 +69,7 @@ a {
         @endif
     </td>
       <td>
-        <a href="{{route('doctors.edit',$v->id)}}">Edit</a>   
+        <a href="{{route('service.edit',$v->id)}}">Edit</a>   
         <a href="{{route('doctors.delete',$v->id)}}">Delete</a>
       </td>
     </tr>
@@ -96,11 +80,11 @@ a {
 
 </table>
 
-  @if(isset($getallblog) && !$getallblog->isEmpty())
+  @if(isset($getallservice) && !$getallservice->isEmpty())
 
 <div style="margin-top: 40px; text-align: center;">
   
-    {!! $getallblog->links() !!}
+    {!! $getallservice->links() !!}
 
 </div>
     
