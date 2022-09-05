@@ -2,7 +2,7 @@
 
 @section('content')
 
- 
+
 
 <!DOCTYPE html>
 <html>
@@ -59,14 +59,14 @@ a {
     @foreach($getdoctors as $key=>$v)
 
      <?php
-     
+
       $getdepartment = \App\Models\Department::where('id',$v->department)->first();
 
      ?>
 
     <tr>
       <td>{{$v->id}}</td> <!-- database name -->
-      <td>{{$v->image}}</td> <!-- database name -->
+      <td><img src="{{asset('uploads/blog/')}}/{{$v->image}}" alt=""></td> <!-- database name -->
       <td>{{$v->name}}</td> <!-- database name -->
       <td>{{$v->position}}</td> <!-- database name -->
       <td>{{$v->description}}</td> <!-- database name -->
@@ -85,7 +85,7 @@ a {
         @endif
     </td>
       <td>
-        <a href="{{route('doctors.edit',$v->id)}}">Edit</a>   
+        <a href="{{route('doctors.edit',$v->id)}}">Edit</a>
         <a href="{{route('doctors.delete',$v->id)}}">Delete</a>
       </td>
     </tr>
@@ -99,11 +99,11 @@ a {
   @if(isset($getallblog) && !$getallblog->isEmpty())
 
 <div style="margin-top: 40px; text-align: center;">
-  
+
     {!! $getallblog->links() !!}
 
 </div>
-    
+
   @endif
 </body>
 </html>

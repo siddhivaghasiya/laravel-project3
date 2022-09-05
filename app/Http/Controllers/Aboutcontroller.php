@@ -7,13 +7,15 @@ use Illuminate\Http\Request;
 class Aboutcontroller extends Controller
 {
     //
-    public function listing(){
+    public function listing()
+    {
 
-    	return view('about.listing-about');
+        return view('about.listing-about');
     }
 
-    public function create(){
+    public function create()
+    {
 
-    	return view('about.add-about');
+        return view('about.add-about');
     }
 }

@@ -25,6 +25,14 @@
   <link rel="stylesheet" href="{{asset('adminlt/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('adminlt/plugins/summernote/summernote-bs4.min.css')}}">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
+  alpha/css/bootstrap.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <style>
   .error {
     color: red;
@@ -55,6 +63,6 @@
     </ul>
 
     <!-- Right navbar links -->
-  
+
   </nav>
   <!-- /.navbar -->

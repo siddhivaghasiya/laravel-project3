@@ -70,7 +70,7 @@ a {
     </td>
       <td>
         <a href="{{route('service.edit',$v->id)}}">Edit</a>   
-        <a href="{{route('doctors.delete',$v->id)}}">Delete</a>
+        <a href="{{route('service.delete',$v->id)}}">Delete</a>
       </td>
     </tr>
 

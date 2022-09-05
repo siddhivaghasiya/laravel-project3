@@ -27,17 +27,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <script src="{{asset('adminlt/jquery.validate.min.js')}}"></script>     
+  <script src="{{asset('adminlt/jquery.validate.min.js')}}"></script>
   <script src="{{asset('adminlt/additional-methods.min.js')}}"></script>
 </head>
 <body>
 
-  
+
 
 <div class="container">
   <h2>Doctors Form</h2>
   <form action="{{route('doctors.save-add')}}" method="POST"  enctype="multipart/form-data" id="doctors">
-    
+
     @csrf
 
      <div class="form-group">
@@ -70,7 +70,7 @@
            @foreach($getdepartment as $key=>$v)
 
         <option value="{{$v->id}}">{{$v->title}}</option>
-          
+
            @endforeach
         @endif
     </select>
@@ -86,7 +86,7 @@
      </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-      <a href="{{route('department.listing')}}" class="btn btn-danger">Cancle</a>
+      <a href="{{route('doctors.listing')}}" class="btn btn-danger">Cancle</a>
 </form>
 </div>
 
@@ -94,7 +94,7 @@
 
   $(document).ready(function() {
     $("#doctors").validate({
-      rules: { 
+      rules: {
         image: {required:true},
         name: {required:true},
         position: {required:true},
@@ -112,8 +112,8 @@
      }
     });
   });
-</script>            
-
+</script>
+@include('adminlt.common.toster')
 </body>
 </html>
 

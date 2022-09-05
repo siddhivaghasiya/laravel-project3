@@ -65,7 +65,7 @@
      </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-      <a href="{{route('department.listing')}}" class="btn btn-danger">Cancle</a>
+      <a href="{{route('service.listing')}}" class="btn btn-danger">Cancle</a>
 </form>
 </div>
 

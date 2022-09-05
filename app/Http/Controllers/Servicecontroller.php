@@ -60,21 +60,21 @@ class Servicecontroller extends Controller
     	 
 
     	$obj = \App\Models\Service::where('id',$parameterid)->first();
+        $oldImage = $obj->image;
         $obj->image = $request->image;
         $obj->service_name = $request->name;
         $obj->description = $request->description;
         $obj->status = $request->status;
 
-        $img = $request->file('image');
+         $img = $request->file('image');
 
         if ($request->hasFile('image')) {
            
-            @unlink('uploads/service/' . $obj->image);
+            @unlink('uploads/service/'.$oldImage);
             $filename = rand() .'.'. $img->getClientOriginalExtension();
             $img->move('uploads/service/', $filename);
 
             $obj->image = $filename;
-            
         }
        
         $obj->save();
@@ -82,7 +82,15 @@ class Servicecontroller extends Controller
         return redirect()->route('service.listing');
     }
 
+      public function delete($parameterid){
+           
+           $obj = \App\Models\Service::where('id',$parameterid)->first();
+           @unlink('uploads/service/'.$obj->image);
 
+           $obj->delete();
+
+          return redirect()->route('service.listing');
+    }
 
 
 }

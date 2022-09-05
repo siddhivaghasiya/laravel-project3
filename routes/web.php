@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +20,21 @@ Route::get('/', function () {
 Route::get('adminlte','\App\Http\Controllers\Admincontroller@index')->name('admit');
 
 Route::get('/','\App\Http\Controllers\Homecontroller@index')->name('front');
+
+// front
+
+Route::get('about','\App\Http\Controllers\Homecontroller@about')->name('front.about');
+
+Route::get('blog','\App\Http\Controllers\Homecontroller@blogsidebar')->name('front.blog-sidebar');
+
+Route::get('blog-sigle','\App\Http\Controllers\Homecontroller@blogsingle')->name('front.blog-single');
+
+Route::get('blog/{id}/viewblog','\App\Http\Controllers\Homecontroller@blogedit')->name('front.blog-singlepage');
+
+Route::post('/savenewslater','\App\Http\Controllers\Homecontroller@savecreate')->name('newslater.save');
+
+Route::post('/appointment','\App\Http\Controllers\Homecontroller@saveappointment')->name('appointment.save');
+
 
 // about us
 Route::get('adminlte/about','\App\Http\Controllers\Aboutcontroller@listing')->name('about.listing');
@@ -110,7 +125,58 @@ Route::get('adminlte/{id}/service-edit','\App\Http\Controllers\Servicecontroller
 
 Route::post('adminlte/{id}/service-save-edit','\App\Http\Controllers\Servicecontroller@update')->name('service.save-edit');
 
+Route::get('adminlte/{id}/service-delete','\App\Http\Controllers\Servicecontroller@delete')->name('service.delete');
 
+// contact
 
+Route::get('adminlte/contact','\App\Http\Controllers\Contactcontroller@listing')->name('contact.listing');
 
+Route::get('adminlte/contact-create','\App\Http\Controllers\Contactcontroller@create')->name('contact.add');
 
+Route::post('adminlte/contact-save-create','\App\Http\Controllers\Contactcontroller@savecreate')->name('contact.save-add');
+
+Route::get('adminlte/{id}/contact-edit','\App\Http\Controllers\Contactcontroller@edit')->name('contact.edit');
+
+Route::post('adminlte/{id}/contact-save-edit','\App\Http\Controllers\Contactcontroller@update')->name('contact.save-edit');
+
+Route::get('adminlte/{id}/contact-delete','\App\Http\Controllers\Contactcontroller@delete')->name('contact.delete');
+
+// pages
+
+Route::get('adminlte/pages','\App\Http\Controllers\Pagescontroller@listing')->name('pages.listing');
+
+Route::get('adminlte/pages-create','\App\Http\Controllers\Pagescontroller@create')->name('pages.add');
+
+Route::post('adminlte/pages-save-create','\App\Http\Controllers\Pagescontroller@savecreate')->name('pages.save-add');
+
+Route::get('adminlte/{id}/pages-edit','\App\Http\Controllers\Pagescontroller@edit')->name('pages.edit');
+
+Route::post('adminlte/{id}/pages-save-edit','\App\Http\Controllers\Pagescontroller@update')->name('pages.save-edit');
+
+Route::get('adminlte/{id}/pages-delete','\App\Http\Controllers\Pagescontroller@delete')->name('pages.delete');
+
+// social
+
+Route::get('adminlte/social','\App\Http\Controllers\Socialcontroller@listing')->name('social.listing');
+
+Route::get('adminlte/social-create','\App\Http\Controllers\Socialcontroller@create')->name('social.add');
+
+Route::post('adminlte/social-savecreate','\App\Http\Controllers\Socialcontroller@savecreate')->name('social.save-add');
+
+Route::get('adminlte/{id}/social-edit','\App\Http\Controllers\Socialcontroller@edit')->name('social.edit');
+
+Route::post('adminlte/{id}/social-save-edit','\App\Http\Controllers\Socialcontroller@update')->name('social.save-edit');
+
+Route::get('adminlte/{id}/social-delete','\App\Http\Controllers\Socialcontroller@delete')->name('social.delete');
+
+// newslater
+
+Route::get('adminlte/newslater','\App\Http\Controllers\Newslatercontroller@listing')->name('newslater.listing');
+
+Route::get('adminlte/{id}/newslater-delete','\App\Http\Controllers\Newslatercontroller@delete')->name('newslater.delete');
+
+// appointment
+
+Route::get('adminlte/appointment','\App\Http\Controllers\Appointmentcontroller@listing')->name('appointment.listing');
+
+Route::get('adminlte/{id}/appointment-delete','\App\Http\Controllers\Appointmentcontroller@delete')->name('appointment.delete');

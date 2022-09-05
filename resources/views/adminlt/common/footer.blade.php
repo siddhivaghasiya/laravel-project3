@@ -52,7 +52,15 @@
  <link rel="stylesheet" href="{{asset('adminlt/bootstrap.min.css')}}">
   <script src="{{asset('adminlt/jquery.min.js')}}jquery.min.js"></script>
   <script src="{{asset('adminlt/bootstrap.min.js')}}"></script>
-  <script src="{{asset('adminlt/jquery.validate.min.js')}}"></script>     
+  <script src="{{asset('adminlt/jquery.validate.min.js')}}"></script>
   <script src="{{asset('adminlt/additional-methods.min.js')}}"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-
+  alpha/css/bootstrap.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </body>
 </html>
