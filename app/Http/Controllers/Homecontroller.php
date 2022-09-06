@@ -33,15 +33,7 @@ class Homecontroller extends Controller
         return view('front.blog-sidebar',compact('getcategories','gettags','getblogs','getblogspp'));
      }
 
-     public function blogsingle(){
 
-        $getcategories = \App\Models\Categories::where('status',1)->get();
-        $gettags = \App\Models\Tags::where('status',1)->get();
-        $getblogs = \App\Models\Blog::where('status',1)->get();
-        $getblogspp = \App\Models\Blog::where('status',1)->where('popular_post',1)->get();
-
-        return view('front.blog-single',compact('getcategories','gettags','getblogs','getblogspp'));
-     }
 
      public function blogedit($parameter){
 
@@ -82,6 +74,34 @@ class Homecontroller extends Controller
 
         return redirect()->route('front')->with('message','Data added Successfully');
 
+       }
+
+       public function service(){
+
+        $getservice = \App\Models\Service::where('status',1)->get();
+
+        return view('front.service',compact('getservice'));
+       }
+
+       public function department(){
+
+        $getdepartment = \App\Models\Department::where('status',1)->get();
+
+        return view('front.department',compact('getdepartment'));
+       }
+
+       public function departmentedit($parametr){
+
+        $geteditdepartment = \App\Models\Department::where('id',$parametr)->firstOrfail();
+
+        return view('front.department-single',compact('geteditdepartment'));
+       }
+
+       public function doctors(){
+
+        $getdoctors = \App\Models\Doctors::where('status',1)->get();
+
+        return view('front.doctors',compact('getdoctors'));
        }
 
 

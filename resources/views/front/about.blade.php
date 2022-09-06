@@ -1,4 +1,4 @@
-@include('front.header')
+@include('front.common.header')
 
 
 
@@ -248,4 +248,4 @@
 	</div>
 </section>
 
-@include('front.footer')
+@include('front.common.footer')

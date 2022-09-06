@@ -27,13 +27,19 @@ Route::get('about','\App\Http\Controllers\Homecontroller@about')->name('front.ab
 
 Route::get('blog','\App\Http\Controllers\Homecontroller@blogsidebar')->name('front.blog-sidebar');
 
-Route::get('blog-sigle','\App\Http\Controllers\Homecontroller@blogsingle')->name('front.blog-single');
-
 Route::get('blog/{id}/viewblog','\App\Http\Controllers\Homecontroller@blogedit')->name('front.blog-singlepage');
 
 Route::post('/savenewslater','\App\Http\Controllers\Homecontroller@savecreate')->name('newslater.save');
 
 Route::post('/appointment','\App\Http\Controllers\Homecontroller@saveappointment')->name('appointment.save');
+
+Route::get('service','\App\Http\Controllers\Homecontroller@service')->name('front.service');
+
+Route::get('department','\App\Http\Controllers\Homecontroller@department')->name('front.department');
+
+Route::get('department/{id}/department-single','\App\Http\Controllers\Homecontroller@departmentedit')->name('front.department-single');
+
+Route::get('doctors','\App\Http\Controllers\Homecontroller@doctors')->name('front.doctors');
 
 
 // about us
