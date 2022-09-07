@@ -31,7 +31,11 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
+<style>
+   .abc {
+    height: 177px;
+}
+</style>
 </head>
 
 <body id="top">
@@ -83,7 +87,7 @@
                         <a class="nav-link dropdown-toggle" href="{{route('front.doctors')}}" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown03">
                             <li><a class="dropdown-item" href="{{route('front.doctors')}}">Doctors</a></li>
-                            <li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li>
+                            <li><a class="dropdown-item" href="{{route('front.appointment')}}">Appoinment</a></li>
                         </ul>
                       </li>
 

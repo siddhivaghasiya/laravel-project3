@@ -41,6 +41,10 @@ Route::get('department/{id}/department-single','\App\Http\Controllers\Homecontro
 
 Route::get('doctors','\App\Http\Controllers\Homecontroller@doctors')->name('front.doctors');
 
+Route::get('doctors/{id}/doctor-single','\App\Http\Controllers\Homecontroller@doctorsedit')->name('front.doctors-single');
+
+Route::get('appointment','\App\Http\Controllers\Homecontroller@appointment')->name('front.appointment');
+
 
 // about us
 Route::get('adminlte/about','\App\Http\Controllers\Aboutcontroller@listing')->name('about.listing');

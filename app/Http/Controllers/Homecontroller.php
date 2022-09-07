@@ -72,7 +72,7 @@ class Homecontroller extends Controller
 
         $obj->save();
 
-        return redirect()->route('front')->with('message','Data added Successfully');
+        return redirect()->route('front.appointment')->with('message','Data added Successfully');
 
        }
 
@@ -103,6 +103,22 @@ class Homecontroller extends Controller
 
         return view('front.doctors',compact('getdoctors'));
        }
+
+       public function doctorsedit($parameter){
+
+        $getdoctorsedit = \App\Models\Doctors::where('id',$parameter)->firstOrfail();
+
+        return view('front.doctors-single',compact('getdoctorsedit'));
+       }
+
+       public function appointment(){
+
+        $getdoctors = \App\Models\Doctors::where('status',1)->get();
+        $getdepartment = \App\Models\Department::where('status',1)->get();
+
+        return view('front.appointment',compact('getdoctors','getdepartment'));
+       }
+
 
 
 
