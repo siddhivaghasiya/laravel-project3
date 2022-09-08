@@ -138,6 +138,17 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="{{route('achievement.listing')}}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Achievement
+              </p>
+            </a>
+          </li>
+
+
+
 
 
 

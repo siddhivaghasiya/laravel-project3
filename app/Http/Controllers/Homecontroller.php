@@ -20,7 +20,11 @@ class Homecontroller extends Controller
 
      public function about(){
 
-       return view('front.about');
+        $getachievement = \App\Models\Achievement::where('status',1)->get();
+        $getdoctors = \App\Models\Doctors::where('status',1)->get();
+        $getdepartment = \App\Models\Department::where('status',1)->get();
+
+       return view('front.about',compact('getachievement','getdoctors','getdepartment'));
     }
 
     public function blogsidebar(){
@@ -118,6 +122,27 @@ class Homecontroller extends Controller
 
         return view('front.appointment',compact('getdoctors','getdepartment'));
        }
+
+       public function contact(){
+
+        return view('front.contact');
+       }
+
+       public function savecontact(Request $request){
+
+        $obj = new \App\Models\Contact;
+        $obj->name = $request->name;
+        $obj->email = $request->email;
+        $obj->query_data = $request->subject;
+        $obj->number = $request->phone;
+        $obj->message = $request->message;
+
+        $obj->save();
+
+
+        return redirect()->route('front.contact')->with('message','Data added Successfully');
+       }
+
 
 
 

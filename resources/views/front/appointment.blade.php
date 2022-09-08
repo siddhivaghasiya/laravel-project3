@@ -115,3 +115,4 @@
 
 
 @include('front.common.footer')
+@include('front.common.toster')

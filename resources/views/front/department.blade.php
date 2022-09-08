@@ -43,7 +43,7 @@
 
 			<div class="col-lg-4 col-md-6 ">
 				<div class="department-block mb-5">
-					<img src="{{asset('uploads/department/'.$v->image)}}" alt="" class="img-fluid w-100">
+					<img src="{{asset('uploads/department/'.$v->image)}}" alt="" class="img-fluid w-100 a">
 					<div class="content">
 						<h4 class="mt-4 mb-2 title-color">{{$v->title}}</h4>
 						<p class="mb-4">{{$v->description}}.</p>

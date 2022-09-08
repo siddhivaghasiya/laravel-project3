@@ -41,34 +41,22 @@
 <section class="fetaure-page ">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-3 col-md-6">
+
+            @if (isset($getdepartment) && !$getdepartment->isEmpty())
+            @foreach ($getdepartment as $key=>$v)
+
+            <div class="col-lg-3 col-md-6">
 				<div class="about-block-item mb-5 mb-lg-0">
-					<img src="images/about/about-1.jpg" alt="" class="img-fluid w-100">
-					<h4 class="mt-3">Healthcare for Kids</h4>
-					<p>Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .</p>
+					<img src="{{asset('uploads/department/'.$v->image)}}" alt="" class="img-fluid w-100 a">
+					<h4 class="mt-3">{{$v->title}}</h4>
+					<p>{{$v->description}}.</p>
 				</div>
 			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="about-block-item mb-5 mb-lg-0">
-					<img src="images/about/about-2.jpg" alt="" class="img-fluid w-100">
-					<h4 class="mt-3">Medical Counseling</h4>
-					<p>Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="about-block-item mb-5 mb-lg-0">
-					<img src="images/about/about-3.jpg" alt="" class="img-fluid w-100">
-					<h4 class="mt-3">Modern Equipments</h4>
-					<p>Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="about-block-item">
-					<img src="images/about/about-4.jpg" alt="" class="img-fluid w-100">
-					<h4 class="mt-3">Qualified Doctors</h4>
-					<p>Voluptate aperiam esse possimus maxime repellendus, nihil quod accusantium .</p>
-				</div>
-			</div>
+
+            @endforeach
+        @endif
+
+
 		</div>
 	</div>
 </section>
@@ -81,36 +69,18 @@
 			</div>
 			<div class="col-lg-8">
 				<div class="row">
-					<div class="col-lg-4 col-md-6 col-sm-6">
-						<div class="award-img">
-							<img src="images/about/3.png" alt="" class="img-fluid">
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6">
-						<div class="award-img">
-							<img src="images/about/4.png" alt="" class="img-fluid">
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6">
-						<div class="award-img">
-							<img src="images/about/1.png" alt="" class="img-fluid">
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6">
-						<div class="award-img">
-							<img src="images/about/2.png" alt="" class="img-fluid">
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6">
-						<div class="award-img">
-							<img src="images/about/5.png" alt="" class="img-fluid">
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-6">
-						<div class="award-img">
-							<img src="images/about/6.png" alt="" class="img-fluid">
-						</div>
-					</div>
+                    @if (isset($getachievement) && !$getachievement->isEmpty())
+                        @foreach ($getachievement as $key=>$v)
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="award-img">
+                                <img src="{{asset('uploads/achievement/'.$v->image)}}" alt="" class="img-fluid ab">
+                            </div>
+                        </div>
+
+                        @endforeach
+                    @endif
+
 				</div>
 			</div>
 		</div>
@@ -130,48 +100,25 @@
 		</div>
 
 		<div class="row">
-			<div class="col-lg-3 col-md-6 col-sm-6">
+
+            @if (isset($getdoctors) && !$getdoctors->isEmpty())
+            @foreach ($getdoctors as $key=>$v)
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="team-block mb-5 mb-lg-0">
-					<img src="images/team/1.jpg" alt="" class="img-fluid w-100">
+					<img src="{{asset('uploads/doctors/'.$v->image)}}" alt="" class="img-fluid w-100 abc">
 
 					<div class="content">
-						<h4 class="mt-4 mb-0"><a href="doctor-single.html">John Marshal</a></h4>
-						<p>Internist, Emergency Physician</p>
+						<h4 class="mt-4 mb-0"><a href="doctor-single.html">{{$v->name}}</a></h4>
+						<p>{{$v->position}}</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<div class="team-block mb-5 mb-lg-0">
-					<img src="images/team/2.jpg" alt="" class="img-fluid w-100">
+            @endforeach
+        @endif
 
-					<div class="content">
-						<h4 class="mt-4 mb-0"><a href="doctor-single.html">Marshal Root</a></h4>
-						<p>Surgeon, Сardiologist</p>
-					</div>
-				</div>
-			</div>
 
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<div class="team-block mb-5 mb-lg-0">
-					<img src="images/team/3.jpg" alt="" class="img-fluid w-100">
-
-					<div class="content">
-						<h4 class="mt-4 mb-0"><a href="doctor-single.html">Siamon john</a></h4>
-						<p>Internist, General Practitioner</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<div class="team-block">
-					<img src="images/team/4.jpg" alt="" class="img-fluid w-100">
-
-					<div class="content">
-						<h4 class="mt-4 mb-0"><a href="doctor-single.html">Rishat Ahmed</a></h4>
-						<p>Orthopedic Surgeon</p>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>

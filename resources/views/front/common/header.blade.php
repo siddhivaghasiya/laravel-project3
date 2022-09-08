@@ -35,6 +35,14 @@
    .abc {
     height: 177px;
 }
+
+.ab {
+    height: 122px;
+}
+
+.a {
+    height: 243px;
+}
 </style>
 </head>
 
@@ -95,7 +103,7 @@
                         <a class="nav-link" href="{{route('front.blog-sidebar')}}"  aria-haspopup="true" aria-expanded="false">Blog</a>
                    </li>
 
-                   <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                   <li class="nav-item"><a class="nav-link" href="{{route('front.contact')}}">Contact</a></li>
                 </ul>
               </div>
             </div>

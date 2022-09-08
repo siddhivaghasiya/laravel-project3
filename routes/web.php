@@ -45,6 +45,10 @@ Route::get('doctors/{id}/doctor-single','\App\Http\Controllers\Homecontroller@do
 
 Route::get('appointment','\App\Http\Controllers\Homecontroller@appointment')->name('front.appointment');
 
+Route::get('contact','\App\Http\Controllers\Homecontroller@contact')->name('front.contact');
+
+Route::post('contact/save','\App\Http\Controllers\Homecontroller@savecontact')->name('front.contact-save');
+
 
 // about us
 Route::get('adminlte/about','\App\Http\Controllers\Aboutcontroller@listing')->name('about.listing');
@@ -190,3 +194,17 @@ Route::get('adminlte/{id}/newslater-delete','\App\Http\Controllers\Newslatercont
 Route::get('adminlte/appointment','\App\Http\Controllers\Appointmentcontroller@listing')->name('appointment.listing');
 
 Route::get('adminlte/{id}/appointment-delete','\App\Http\Controllers\Appointmentcontroller@delete')->name('appointment.delete');
+
+// // Achievement
+
+Route::get('adminlte/achievement','\App\Http\Controllers\Achievementcontroller@listing')->name('achievement.listing');
+
+Route::get('adminlte/achievement-add','\App\Http\Controllers\Achievementcontroller@create')->name('achievement.add');
+
+Route::post('adminlte/achievement-saveadd','\App\Http\Controllers\Achievementcontroller@savecreate')->name('achievement.save-add');
+
+Route::get('adminlte/{id}/achievement-edit','\App\Http\Controllers\Achievementcontroller@edit')->name('achievement.edit');
+
+Route::post('adminlte/{id}/achievement-saveedit','\App\Http\Controllers\Achievementcontroller@update')->name('achievement.save-edit');
+
+Route::get('adminlte/{id}/achievement-delete','\App\Http\Controllers\Achievementcontroller@delete')->name('achievement.delete');
